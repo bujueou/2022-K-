@@ -377,6 +377,7 @@ function aiplay() //电脑的逻辑
         }
     }
     var randomm = 50;//循环50次，找不到空位就算了.
+    if(k1==0||k2==0||k3==0){
     while(randomm != 0)
     {
         var tion = Math.floor((Math.random() * 10) + 1) % 9;
@@ -404,6 +405,7 @@ function aiplay() //电脑的逻辑
         }
         randomm--;
     }
+}
     //
     for(var k = 0;k <= 2;k++)
     {

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta property="og:type" content="website" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css" integrity="sha512-oc9+XSs1H243/FRN9Rw62Fn8EtxjEYWHXRvjS43YtueEewbS6ObfXcJNyohjHqVKFPoXXUxwc+q1K7Dee6vv9g==" crossorigin="anonymous"/>
+        <link rel="stylesheet" href="./css/pvp.css" />
+        <title></title>
+    </head>
+    <body>
+        <audio autoplay loop id="indexbgm"> <!--设置背景音乐-->
+            <source src="./music/Marshmello - CoLoUR.mp3" > <!--大小写混乱时期的老棉yyds-->
+        </audio>
+        <script>
+            function toggleSound() {
+            var music = document.getElementById("indexbgm");//获取ID  
+            if (music.paused) { //判读是否播放  
+                music.paused=false;
+                music.play(); //没有就播放 
+            }    
+          }
+          setInterval("toggleSound()",1);
+        </script>
+        <div class="gametable"> <!--一个大div，用来装两个骰子盘和抛掷按钮-->
+            <div class="leftscorebox"><span class="leftscore" id="leftscore">0</span></div> <!--左边计分-->
+            <div class="box-left" id="box-left"> <!--左边骰子盘-->
+                <div class="box"><img src="./images/start.jpg" id="leftbox1" onclick="layNum('leftbox1')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox2" onclick="layNum('leftbox2')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox3" onclick="layNum('leftbox3')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox4" onclick="layNum('leftbox4')"></div> 
+                <div class="box"><img src="./images/start.jpg" id="leftbox5" onclick="layNum('leftbox5')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox6" onclick="layNum('leftbox6')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox7" onclick="layNum('leftbox7')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox8" onclick="layNum('leftbox8')"></div>
+                <div class="box"><img src="./images/start.jpg" id="leftbox9" onclick="layNum('leftbox9')"></div>
+            </div>
+        <html>
+            <body>
+                <div class="container">
+                    <div class="row">
+                        <div class="mx-auto mt-4 offset-2 col-8">
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="dice m-auto">
+                                        <img src="./images/dice-6.png" id="dice_img" class="d-block w-100" />
+                                    </div>
+                                    <div class="w-100 text-center">
+                                        <button id="throw" class="b1" onclick="throwClick()"><span class="sp1">开始投掷</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </body>
+        </html>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous" defer></script>
+        <script src="./js/roll-a-die.js" defer></script>
+        <div class="rightscorebox"><span class="rightscore" id="rightscore">0</span></div>
+        <div class="box-right" id="box-right">
+            <div class="box"><img src="./images/start.jpg" id="rightbox1" onclick="layNum('rightbox1')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox2" onclick="layNum('rightbox2')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox3" onclick="layNum('rightbox3')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox4" onclick="layNum('rightbox4')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox5" onclick="layNum('rightbox5')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox6" onclick="layNum('rightbox6')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox7" onclick="layNum('rightbox7')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox8" onclick="layNum('rightbox8')"></div>
+            <div class="box"><img src="./images/start.jpg" id="rightbox9" onclick="layNum('rightbox9')"></div>
+        </div>
+
+        <div id="background" class="background"> <!--结束页面-->
+            <div id="div1" class="content">
+                <div id="close">
+                    <h2 id="theend" class="theend">对决结果</h2>
+                </div>
+                <div id="div2" class="div2">
+                    <span id="whowin" class="whowin">?方赢了</span>
+                </div>
+                <button onclick="window.location.href = 'index.html'" id="back" class="back">回到首页</button>
+                <button onclick="window.location.href = 'pvp.html'" id="again" class="again">再来一把</button>
+            </div>
+        </div>
+    
+    </body>
+</html>
